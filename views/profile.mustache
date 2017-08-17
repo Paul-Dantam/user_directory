@@ -17,6 +17,32 @@
 
         <div class="container">
 
+            <div class="profileTop">
+                <img class="profilePic" src="{{avatar}}" alt="">
+                <h1 class="indexName">{{name}}</h1>
+                <div class="userLocation">{{#address.city}}{{address.city}}, {{/address.city}}{{address.country}} | {{#job}}{{job}}, {{company}}{{/job}}</div>{{^job}}
+                <div class="nojob">Available for hire</div>{{/job}}
+                <div class="contactInfo">{{email}} | {{phone}}</div>
+            </div>
+
+            <div class="profileBottom">
+                {{#university}}
+                <div class="ed&skills">Education</div>
+                {{/university}} {{^university}} {{/university}}
+                <div class="ed&skills">Skills</div>
+
+
+                {{#university}}
+                <div class="ed&skills">{{university}}</div>
+                {{/university}} {{^university}} {{/university}} {{#skills}}
+                <div class="skills">{{skills}}</div>
+                {{/skills}}
+
+
+
+            </div>
+
+
         </div>
 
 
