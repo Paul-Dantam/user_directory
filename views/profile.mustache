@@ -12,31 +12,41 @@
 
 <body>
 
-    <section class="wrapper">
+    <section class="profilewrapper">
 
 
-        <div class="container">
+        <div class="profilecontainer">
+
+
 
             <div class="profileTop">
-                <img class="profilePic" src="{{avatar}}" alt="">
-                <h1 class="indexName">{{name}}</h1>
-                <div class="userLocation">{{#address.city}}{{address.city}}, {{/address.city}}{{address.country}} | {{#job}}{{job}}, {{company}}{{/job}}</div>{{^job}}
-                <div class="nojob">Available for hire</div>{{/job}}
-                <div class="contactInfo">{{email}} | {{phone}}</div>
+                <div class="imgcontainer">
+                    <img class="profilePic" src="{{avatar}}" alt="">
+                </div>
+                <div class="userInfo">
+                    <h1 class="indexName">{{name}}</h1>
+                    <div class="userLocation">{{#address.city}}{{address.city}}, {{/address.city}}{{address.country}} | {{#job}}{{job}}, {{company}}{{/job}}{{^job}}</div>
+                    <div class="nojob">Available for hire</div>{{/job}}
+                    <div class="contactInfo">{{email}} | {{phone}}</div>
+                </div>
+
             </div>
 
             <div class="profileBottom">
-                {{#university}}
-                <div class="ed&skills">Education</div>
-                {{/university}} {{^university}} {{/university}}
-                <div class="ed&skills">Skills</div>
 
+                <div class="leftBot">
+                    {{#university}}
+                    <div class="ednskills">Education</div>
+                    {{/university}} {{^university}} {{/university}}
+                    <div class="ednskills">Skills</div>
+                </div>
 
-                {{#university}}
-                <div class="ed&skills">{{university}}</div>
-                {{/university}} {{^university}} {{/university}} {{#skills}}
-                <div class="skills">{{skills}}</div>
-                {{/skills}}
+                <div class="rightBot">
+                    {{#university}}
+                    <div class="ed">{{.}}</div>
+                    {{/university}} {{^university}} {{/university}} {{#skills}}
+                    <div class="skills">{{.}}</div>{{/skills}}
+                </div>
 
 
 
